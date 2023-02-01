@@ -1,0 +1,32 @@
+﻿@model IEnumerable<Student>
+@{
+    //Layout = "~/views/shared/_Layout2.cshtml";
+    ViewBag.title = "Student List";
+}
+
+
+    <table class="table table borderd">
+    <tr>
+        <td>Student ID</td>
+        <td>Student Name</td>
+        <td>Department Number</td> 
+        <td>CRUD</td>
+    </tr>
+
+    @foreach(var item in Model){
+        <tr>
+            <td>@item.Id</td>
+            <td>@item.Name</td>
+            <td>@item.Department.DeptId</td>
+                <td>
+                    @*<a asp-action="Details" asp-controller="Student" asp-route-id="@student.Id" class="btn btn-success">Details</a>*@
+                    @*Are you sure ?, from side of client not server*@
+                    <a onclick="return confirm(' Are you sure ? ')" asp-action="Delete" asp-controller="Student" asp-route-id="@item.Id" class="btn btn-danger">Delete</a>
+                    <a asp-action="edit" asp-controller="Student" asp-route-id="@item.Id" class="btn btn-warning">Edit</a>
+                    <a asp-action="Details" asp-controller="Student" asp-route-id="@item.Id" class="btn btn-success">Details</a>
+                </td>
+        </tr>
+        
+    }
+    </table>
+

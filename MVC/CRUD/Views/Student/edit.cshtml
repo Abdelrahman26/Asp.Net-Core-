@@ -1,0 +1,20 @@
+﻿@model Student
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>edit</title>
+</head>
+<body>
+    <form method="post" >
+        <input asp-for="Name">
+        <input asp-for="Age">
+        <input type="submit" value="Add">
+    </form>
+</body>
+</html>

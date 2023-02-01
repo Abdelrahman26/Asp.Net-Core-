@@ -1,0 +1,28 @@
+﻿@model Student
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Create</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css">
+</head>
+<body>
+    @*
+        form has to be post, in the case of sending file 
+    *@
+    <form asp-action="Create" asp-controller="Student"  enctype="multipart/form-data">
+        <input asp-for="Name" placeholder="Name"><br>
+        <input asp-for="Age" placeholder="Age"><br>
+        @*content of the image*@
+        <input type="file" name="imgsrc" placeholder=""><br>
+        <input type="submit" value ="Create" class="btn btn-success">
+    </form>
+
+    <a asp-action="index" asp-controller="Student" >Back-To-Index</a>
+</body>
+</html>

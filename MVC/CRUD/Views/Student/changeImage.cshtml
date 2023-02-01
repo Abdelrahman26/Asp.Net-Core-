@@ -1,0 +1,22 @@
+﻿@model Student
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>changeImage</title>
+</head>
+<body>
+    <form asp-action="changeImage" asp-controller="Student" enctype="multipart/form-data">
+        <input asp-for="Name" placeholder="Name"><br>
+        <input asp-for="Age" placeholder="Age"><br>
+        @*content of the image*@
+        <input type="file" name="imgsrc" placeholder=""><br>
+        <input type="submit" value="Change Image" class="btn btn-success">
+    </form>
+</body>
+</html>

@@ -1,0 +1,20 @@
+﻿@model IEnumerable<Department>
+
+@{
+    
+}
+
+
+    <table class="table table-bordered">
+        <tr>
+            <td>Dept_ID</td>
+            <td>Dept_Name</td>
+        </tr>
+        @foreach(var item in Model){
+            <tr>
+                <td>@item.DeptId</td>
+                <td>@item.DeptName</td>
+            </tr>
+        }
+    </table>
+
